@@ -1,0 +1,40 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.3.18",
+    "@types/node": "^14.14.26",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
+    "graphql": "^15.5.0",
+    "date-fns": "^2.21.3",
+    "framer-motion": "^4.1.6",
+    "next": "10.0.5",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "@tailwindcss/jit": "^0.1.18",
+    "parameterize": "^1.0.0",
+    "recoil": "^0.2.0",
+    "sass": "^1.30.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "cssnano": "^4.1.10",
+    "postcss": "^8.2.5",
+    "tailwindcss": "^2.0.3",
+    "typescript": "^4.1.5"
+  },
+  "devDependencies": {
+    
+    "autoprefixer": "^10.2.4"
+  },
+  "browserslist": [
+    "last 2 version",
+    "IE 11"
+  ]
+}

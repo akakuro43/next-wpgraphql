@@ -1,0 +1,17 @@
+
+// variables
+@import '~/style/variables/_index.sass'
+
+.pKeyVisual
+  .bg
+    +setBgCover('/images/pc/top/bg_kv.jpg')
+.pArticle
+  .articleList
+    .item
+      &:not(:nth-child(3n))
+        @apply mr-40px
+      &:nth-child(n+4)
+        @apply mt-56px
+      .thumb
+        +setBgCover()
+

@@ -1,0 +1,42 @@
+# Translation of Plugins - Public Post Preview - Stable (latest release) in Japanese
+# This file is distributed under the same license as the Plugins - Public Post Preview - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-03-10 15:18:01+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: ja_JP\n"
+"Project-Id-Version: Plugins - Public Post Preview - Stable (latest release)\n"
+
+#: public-post-preview.php:480
+msgid "This link has expired!"
+msgstr "リンクの有効期限が切れています !"
+
+#: public-post-preview.php:218 js/dist/gutenberg-integration.js:1
+#: js/src/components/preview-toggle/index.js:204
+msgid "Copy and share this preview URL."
+msgstr "プレビュー URL をコピーし、シェアします。"
+
+#: public-post-preview.php:141
+msgid "Public Preview"
+msgstr "外部確認"
+
+#: public-post-preview.php:213 js/dist/gutenberg-integration.js:1
+#: js/src/components/preview-toggle/index.js:156
+msgid "Enable public preview"
+msgstr "外部確認を許可する"
+
+#: public-post-preview.php:123
+msgid "Enabled!"
+msgstr "有効化中"
+
+#: public-post-preview.php:124
+msgid "Disabled!"
+msgstr "無効化中"
+
+#: public-post-preview.php:484
+msgid "No public preview available!"
+msgstr "外部確認は利用できません !"

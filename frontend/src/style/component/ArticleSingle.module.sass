@@ -1,0 +1,30 @@
+
+// variables
+@import '~/style/variables/_index.sass'
+
+.pArticle
+  .articleBody
+    h2
+      @apply font-bold tracking-wide text-off-white
+      // +setFont(32px,1.25,32px,72px)
+    p
+      @apply font-medium tracking-wide text-gray
+      // +setFont(20px,1.75,32px,32px)
+      img
+        @apply w-full mt-32px rounded-4px
+      a
+        @apply underline text-off-white
+      strong
+        @apply text-off-white
+
+    ul
+      @apply my-32px
+      li
+        @apply font-medium tracking-wide relative text-gray pl-32px
+        // +setFont(20px,1.5,16px,16px)
+        &::before
+          @apply absolute bg-gray top-13px left-13px w-5px h-5px 
+          border-radius: 50%
+
+
+

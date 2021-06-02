@@ -1,0 +1,8 @@
+=setBgCover($url:none,$bs:cover)
+  @if $url == 'none'
+    background-image: none
+  @else
+    background-image: url($url)
+  background-size: $bs
+  background-repeat: no-repeat
+  background-position: 50% 50%

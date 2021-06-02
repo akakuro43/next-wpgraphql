@@ -1,0 +1,72 @@
+version: "3"
+
+services:
+  node: 
+    build:
+      context: .
+      dockerfile: ./build/node/Dockerfile
+    working_dir: /app/frontend
+    command: yarn dev
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    # environment:
+    #   - WORDPRESS_GRAPHQL_ENDPOINT=http://localhost:8080/graphql
+    volumes:
+      - .:/app
+      - /app/frontend/node_modules
+    # depends_on:
+    #   - wordpress
+
+  wordpress:
+    image: wordpress:5.5.3
+    container_name: wordpress-next-graphql
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD: examplepass
+      WORDPRESS_DB_NAME: exampledb
+      WORDPRESS_DEBUG: 1
+    volumes:
+      - wordpress:/var/www/html
+      - ./wp-content/themes:/var/www/html/wp-content/themes
+      - ./wp-content/plugins:/var/www/html/wp-content/plugins
+      - ./wp-content/uploads:/var/www/html/wp-content/uploads
+      - ./wp-content/languages:/var/www/html/wp-content/languages
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    ports:
+      - 13306:3306
+    restart: always
+    environment:
+      MYSQL_DATABASE: exampledb
+      MYSQL_USER: exampleuser
+      MYSQL_PASSWORD: examplepass
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+      TZ: "Asia/Tokyo"
+    volumes:
+      # - db:/var/lib/mysql
+      - ./build/db/my.cnf:/etc/my.cnf
+      - ./build/db/sql:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    ports:
+      - 8888:80
+    depends_on:
+      - db
+    restart: always
+    volumes:
+      - ./build/phpmyadmin/phpmyadmin-misc.ini:/usr/local/etc/php/conf.d/phpmyadmin-misc.ini
+
+
+volumes:
+  wordpress:
+  db:
